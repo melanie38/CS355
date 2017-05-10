@@ -3,6 +3,7 @@ package cs355.model.drawing;
 import cs355.controller.CS355Controller;
 
 import java.awt.Color;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,7 +11,7 @@ import java.util.List;
  */
 public class Drawing extends CS355Drawing {
 
-    private static Color selectedColor = null;
+    private static List<Shape> listOfShapes;
 
     private static Drawing instance;
 
@@ -21,27 +22,23 @@ public class Drawing extends CS355Drawing {
         return instance;
     }
 
-    public static Color getColor() {
-        return selectedColor;
-    }
-
-    public void setColor(Color c) {
-        selectedColor = c;
-    }
-
     @Override
     public Shape getShape(int index) {
-        return null;
+
+        return listOfShapes.get(index);
     }
 
     @Override
     public int addShape(Shape s) {
-        return 0;
+
+        listOfShapes.add(s);
+
+        return listOfShapes.size() - 1;
     }
 
     @Override
     public void deleteShape(int index) {
-
+        listOfShapes.remove(index);
     }
 
     @Override
@@ -66,7 +63,7 @@ public class Drawing extends CS355Drawing {
 
     @Override
     public List<Shape> getShapes() {
-        return null;
+        return listOfShapes;
     }
 
     @Override
@@ -76,6 +73,6 @@ public class Drawing extends CS355Drawing {
 
     @Override
     public void setShapes(List<Shape> shapes) {
-
+        //listOfShapes = shapes;
     }
 }
