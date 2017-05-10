@@ -2,6 +2,8 @@ package cs355.solution;
 
 import cs355.GUIFunctions;
 import cs355.controller.Controller;
+import cs355.model.drawing.Drawing;
+import cs355.view.View;
 
 /**
  * This is the main class. The program starts here.
@@ -16,10 +18,16 @@ public class CS355 {
 	 */
 	public static void main(String[] args) {
 
+	    //Drawing model = new Drawing();
+
 		Controller appController = new Controller();
+		View appView = new View();
+
+        //model.inst();
+
 
 		// Fill in the parameters below with your controller and view.
-		GUIFunctions.createCS355Frame(appController, null);
+		GUIFunctions.createCS355Frame(appController, appView);
 
 		GUIFunctions.refresh();
 	}

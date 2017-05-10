@@ -18,6 +18,7 @@ public class Drawing extends CS355Drawing {
     public static Drawing inst() {
         if (instance == null) {
             instance = new Drawing();
+            listOfShapes = new ArrayList<>();
         }
         return instance;
     }
@@ -32,6 +33,7 @@ public class Drawing extends CS355Drawing {
     public int addShape(Shape s) {
 
         listOfShapes.add(s);
+        update();
 
         return listOfShapes.size() - 1;
     }
@@ -39,6 +41,7 @@ public class Drawing extends CS355Drawing {
     @Override
     public void deleteShape(int index) {
         listOfShapes.remove(index);
+        update();
     }
 
     @Override
@@ -73,6 +76,11 @@ public class Drawing extends CS355Drawing {
 
     @Override
     public void setShapes(List<Shape> shapes) {
-        //listOfShapes = shapes;
+        listOfShapes = shapes;
+    }
+
+    public void update() {
+        setChanged();
+        notifyObservers();
     }
 }

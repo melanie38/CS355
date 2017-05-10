@@ -1,0 +1,86 @@
+[
+  {
+    "start": {
+      "x": 94.0,
+      "y": 262.0
+    },
+    "end": {
+      "x": 94.0,
+      "y": 134.0
+    },
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Line"
+  },
+  {
+    "start": {
+      "x": 98.0,
+      "y": 136.0
+    },
+    "end": {
+      "x": 147.0,
+      "y": 199.0
+    },
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Line"
+  },
+  {
+    "start": {
+      "x": 147.0,
+      "y": 199.0
+    },
+    "end": {
+      "x": 181.0,
+      "y": 125.0
+    },
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Line"
+  },
+  {
+    "start": {
+      "x": 181.0,
+      "y": 126.0
+    },
+    "end": {
+      "x": 181.0,
+      "y": 276.0
+    },
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Line"
+  },
+  {
+    "upperLeft": {
+      "x": 244.0,
+      "y": 216.0
+    },
+    "size": 52.0,
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Square"
+  },
+  {
+    "center": {
+      "x": 389.5,
+      "y": 188.5
+    },
+    "radius": 51.5,
+    "color": {
+      "value": -1,
+      "falpha": 0.0
+    },
+    "SHAPE_TYPE": "cs355.model.drawing.Circle"
+  }
+]
