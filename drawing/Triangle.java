@@ -1,7 +1,5 @@
 package cs355.model.drawing;
 
-import cs355.GUIFunctions;
-
 import java.awt.Color;
 import java.awt.geom.Point2D;
 
@@ -95,50 +93,7 @@ public class Triangle extends Shape {
 	 */
 	@Override
 	public boolean pointInShape(Point2D.Double pt, double tolerance) {
-		Point2D.Double A = getA();
-		Point2D.Double B = getB();
-		Point2D.Double C = getC();
-
-		Point2D.Double edgeAQ = new Point2D.Double(pt.getX() - A.getX(), pt.getY() - A.getY());
-		Point2D.Double edgeBQ = new Point2D.Double(pt.getX() - B.getX(), pt.getY() - B.getY());
-		Point2D.Double edgeCQ = new Point2D.Double(pt.getX() - C.getX(), pt.getY() - C.getY());
-
-		Point2D.Double edgeAB = new Point2D.Double(B.getX() - A.getX(), B.getY() - A.getY());
-		Point2D.Double edgeBC = new Point2D.Double(C.getX() - B.getX(), C.getY() - B.getY());
-		Point2D.Double edgeCA = new Point2D.Double(A.getX() - C.getX(), A.getY() - C.getY());
-
-		double testA = getDotProduct(edgeAQ, new Point2D.Double(-edgeAB.getY(), edgeAB.getX()));
-		double testB = getDotProduct(edgeBQ, new Point2D.Double(-edgeBC.getY(), edgeBC.getX()));
-		double testC = getDotProduct(edgeCQ, new Point2D.Double(-edgeCA.getY(), edgeCA.getX()));
-
-		if (sameSign(testA, testB, testC)) {
-			GUIFunctions.printf("triangle selected");
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isOnHandle(Point2D.Double pt, double tolerance) {
-		if (pt.getX() > -6 && pt.getX() < 6) {
-			//if (pt.getY())
-			return true;
-		}
-		return false;
-	}
-
-	private double getDotProduct(Point2D.Double point, Point2D.Double edge) {
-		return (point.getX() * edge.getX()) + (point.getY() * edge.getY());
-	}
-
-	private boolean sameSign(double a, double b, double c) {
-		if (a < 0 && b < 0 && c < 0) {
-			return true;
-		}
-		else if (a > 0 && b > 0 && c > 0) {
-			return true;
-		}
-		return false;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 }

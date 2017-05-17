@@ -1,7 +1,5 @@
 package cs355.model.drawing;
 
-import cs355.GUIFunctions;
-
 import java.awt.Color;
 import java.awt.geom.Point2D;
 
@@ -76,26 +74,7 @@ public class Rectangle extends Shape {
 	 */
 	@Override
 	public boolean pointInShape(Point2D.Double pt, double tolerance) {
-		double x = Math.abs(pt.getX());
-		double y = Math.abs(pt.getY());
-		double a = getWidth() / 2;
-		double b = getHeight() / 2;
-
-		if (x <= a && y <= b) {
-			GUIFunctions.printf("rectangle selected");
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isOnHandle(Point2D.Double pt, double tolerance) {
-		if (pt.getX() > -6 && pt.getX() < 6) {
-			if (pt.getY() < -height/2 - 12 && pt.getY() > -height/2 - 20) {
-				return true;
-			}
-		}
-		return false;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 }

@@ -85,7 +85,4 @@ public abstract class Shape {
 	 * @return true if pt is in the shape, false otherwise.
 	 */
 	public abstract boolean pointInShape(Point2D.Double pt, double tolerance);
-
-	public abstract boolean isOnHandle(Point2D.Double pt, double tolerance);
-
 }

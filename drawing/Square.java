@@ -1,7 +1,5 @@
 package cs355.model.drawing;
 
-import cs355.GUIFunctions;
-
 import java.awt.Color;
 import java.awt.geom.Point2D;
 
@@ -55,27 +53,7 @@ public class Square extends Shape {
 	 */
 	@Override
 	public boolean pointInShape(Point2D.Double pt, double tolerance) {
-		double x = Math.abs(pt.getX());
-		double y = Math.abs(pt.getY());
-		double a = getSize() / 2.0;
-		double b = getSize() / 2.0;
-
-		if (x <= a && y <= b) {
-			GUIFunctions.printf("square selected");
-			return true;
-		}
-
-		return false;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
-
-    @Override
-    public boolean isOnHandle(Point2D.Double pt, double tolerance) {
-        if (pt.getX() > -6 && pt.getX() < 6) {
-            if (pt.getY() < -size/2 - 12 && pt.getY() > -size/2 - 20) {
-                return true;
-            }
-        }
-        return false;
-    }
 
 }

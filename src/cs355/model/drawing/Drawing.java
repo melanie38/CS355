@@ -1,9 +1,15 @@
 package cs355.model.drawing;
 
+import com.sun.jna.platform.win32.WinDef;
+import cs355.GUIFunctions;
 import cs355.controller.CS355Controller;
+import cs355.utilities.Converter;
 
-import java.awt.Color;
+import java.awt.*;
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -46,22 +52,26 @@ public class Drawing extends CS355Drawing {
 
     @Override
     public void moveToFront(int index) {
-
+        Shape temp = listOfShapes.get(index);
+        listOfShapes.remove(index);
+        listOfShapes.add(temp);
     }
 
     @Override
     public void movetoBack(int index) {
-
+        Shape temp = listOfShapes.get(index);
+        listOfShapes.remove(index);
+        listOfShapes.add(0, temp);
     }
 
     @Override
     public void moveForward(int index) {
-
+        Collections.swap(listOfShapes, index, index + 1);
     }
 
     @Override
     public void moveBackward(int index) {
-
+        Collections.swap(listOfShapes, index, index - 1);
     }
 
     @Override
@@ -71,7 +81,11 @@ public class Drawing extends CS355Drawing {
 
     @Override
     public List<Shape> getShapesReversed() {
-        return null;
+        List<Shape> result = new ArrayList<>();
+        for (int i = listOfShapes.size() - 1; i > -1; i--) {
+            result.add(listOfShapes.get(i));
+        }
+        return result;
     }
 
     @Override

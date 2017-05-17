@@ -1,15 +1,13 @@
 package cs355.model.drawing;
 
-import cs355.GUIFunctions;
-
 import java.awt.Color;
 import java.awt.geom.Point2D;
 
 /**
- * Add your rectangle code here. You can add fields, but you cannot
+ * Add your ellipse code here. You can add fields, but you cannot
  * change the ones that already exist. This includes the names!
  */
-public class Rectangle extends Shape {
+public class Ellipse extends Shape {
 
 	// The width of this shape.
 	private double width;
@@ -24,7 +22,7 @@ public class Rectangle extends Shape {
 	 * @param width the width of the new shape.
 	 * @param height the height of the new shape.
 	 */
-	public Rectangle(Color color, Point2D.Double center, double width, double height) {
+	public Ellipse(Color color, Point2D.Double center, double width, double height) {
 
 		// Initialize the superclass.
 		super(color, center);
@@ -76,26 +74,7 @@ public class Rectangle extends Shape {
 	 */
 	@Override
 	public boolean pointInShape(Point2D.Double pt, double tolerance) {
-		double x = Math.abs(pt.getX());
-		double y = Math.abs(pt.getY());
-		double a = getWidth() / 2;
-		double b = getHeight() / 2;
-
-		if (x <= a && y <= b) {
-			GUIFunctions.printf("rectangle selected");
-			return true;
-		}
-		return false;
-	}
-
-	@Override
-	public boolean isOnHandle(Point2D.Double pt, double tolerance) {
-		if (pt.getX() > -6 && pt.getX() < 6) {
-			if (pt.getY() < -height/2 - 12 && pt.getY() > -height/2 - 20) {
-				return true;
-			}
-		}
-		return false;
+		throw new UnsupportedOperationException("Not supported yet.");
 	}
 
 }
